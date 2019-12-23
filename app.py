@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, send_from_directory
-from random import randrange
+
+from sayings import get_random_saying, overwrite_saying
 
 
 app = Flask(__name__, static_url_path="")
@@ -8,26 +9,13 @@ app = Flask(__name__, static_url_path="")
 def home():
 	file_path = "static/temp/cookie-sayings.txt"
 
-	# open cookie sayings file
-	f = open(file_path, "r")
-	sayings = f.read()
-	sayings_list = sayings.split("\n")
-	f.close()
-
-	# pick random fortune
-	random_num = randrange(len(sayings_list))
-	fortune = sayings_list[random_num]
+	# get random saying and index
+	saying, index = get_random_saying(file_path)
 
 	if request.method == "POST":
 		# get form data
-		fortune_input = request.form.get("fortuneInput")
-		if fortune_input != "":
-			# overwrite old saying
-			sayings_list[random_num] = fortune_input
-			
-			f = open(file_path, "w")
-			f.write("\n".join(sayings_list))
-			f.close()
+		saying_input = request.form.get("sayingInput")
+		overwrite_saying(file_path, index, saying_input)
 
 	return render_template("index.html", **locals())
 

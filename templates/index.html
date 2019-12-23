@@ -5,15 +5,15 @@
 <div class="container h-100">
     <div class="row h-100 justify-content-center align-items-center">
         <div class="col-12 text-center">
-            <h1 class="display-4">{{ fortune }}</h1>
+            <h1 class="display-4">{{ saying }}</h1>
             <hr/>
             <a href="/" class="btn btn-primary" role="button">Try again</a>
         </div>
 
         <form class="col-sm-12 col-lg-8 text-center" action="{{ url_for('home') }}" method="post">
             <div class="form-group">
-                <label for="fortuneInput">Thanks for checking your fortune! Care to share a quote?</label>
-                <input type="text" class="form-control" id="fortuneInput" name="fortuneInput" placeholder="Docendo discimus. By teaching, we learn.">
+                <label for="sayingInput">Thanks for checking your fortune! Care to share a quote?</label>
+                <input type="text" class="form-control" id="sayingInput" name="sayingInput" placeholder="Docendo discimus. By teaching, we learn.">
                 <small id="fortuneHelp" class="form-text text-muted">
                     You might just brighten up someone else's day!
                 </small>
