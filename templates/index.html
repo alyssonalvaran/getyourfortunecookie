@@ -22,9 +22,20 @@
 	<div class="container h-100">
 		<div class="row h-100 justify-content-center align-items-center">
 			<div class="col-12 text-center">
-				<p class="lead">{{ fortune }}</p>
-				<a class="btn btn-primary" href="/" role="button">Try again</a>
-			</div>  
+				<h1 class="display-4">{{ fortune }}</h1>
+				<hr/>
+			</div>
+			<form class="col-12 text-center">
+				<div class="form-group">
+					<label for="fortuneInput">Thanks for checking your fortune! Care to share a quote?</label>
+					<input type="text" class="form-control" id="fortuneInput" aria-describedby="emailHelp" placeholder="Docendo discimus. By teaching, we learn.">
+					<small id="fortuneHelp" class="form-text text-muted">
+						You might just brighten up someone else's day!
+					</small>
+				</div>
+				<button type="submit" class="btn btn-primary">Submit Fortune</button>
+			</form>
+
 		</div>
 	</div>
 
