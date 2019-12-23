@@ -59,6 +59,18 @@ flask run
 
 You can stop the app by typing in `CTRL + C`.
 
+## Running the tests
+
+The tests are located in the `test_sayings.py` file. These tests check for the following:
+* `test_get_sayings_list` tests if get_sayings_list returns a list of strings.
+* `test_get_random_saying` tests if get_random_saying return a string saying and an integer index.
+* `test_overwrite_saying` tests if overwrite_saying overwrites the previous value of the file.
+
+To run the tests, just enter this in your console:
+```
+$ pytest
+```
+
 ## Deployment
 
 This application is deployed in [Heroku](https://heroku.com/) and automatically updates whenever there are changes pushed to the master branch of this repository.
